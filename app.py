@@ -3,28 +3,20 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.get("/")
 def home():
-    """GET endpoint for root path"""
-    app.logger.info("Homepage endpoint invoked");
-    return jsonify({
-        'message': 'Welcome to the Cloud with varjosh',
-        'platform':"Github Actions",
-        'status': 'success'
-    }), 200
+    return jsonify(
+        message="Welcome to Cloud With VarJosh",
+        platform="GitHub Actions",
+        runtime="Docker + Flask"
+    )
 
-@app.route('/health', methods=['GET'])
+@app.get("/health")
 def health():
-    """Health check endpoint"""
-    app.logger.info("Health check endpoint invoked");
-    return jsonify({
-        'status': 'healthy',
-        'message': 'API is running'
-    }), 200
+    return jsonify(status="healthy"), 200
 
-if __name__ == '__main__':
-    app.logger.info("Starting Flask application");
+if __name__ == "__main__":
     app.run(
-      host="0.0.0.0",
-      port=int(os.getenv("PORT",5000))
+        host="0.0.0.0",
+        port=int(os.getenv("PORT", 5000))
     )
