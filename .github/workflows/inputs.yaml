@@ -32,7 +32,7 @@ jobs:
 
       - name: Display Input Values
         run: |
-          echo "Environment" ${{inputs.environment}}"
+          echo "Environment ${{inputs.environment}}"
           echo "Perfrom smoke test: ${{inputs.perfrom_smoke_test}}"
 
       - name: Build Docker Image
