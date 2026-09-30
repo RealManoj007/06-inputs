@@ -80,7 +80,7 @@ jobs:
           echo "smoke test compeleted successfully"
 
       - name: deploy to Kubernates
-        if: ${{inputs.environment=='prod'}}
+        if: ${{inputs.environment == 'prod'}}
         run: |
           echo " deplopying applicaiton tp Production Kubernates cluster..."
           echo "Deployment completed successfully"
