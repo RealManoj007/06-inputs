@@ -1,4 +1,4 @@
-name: 02 - Reusable deployment Workflow
+name: Reusable deployment Workflow
 on:
   workflow_call:
     inputs:
